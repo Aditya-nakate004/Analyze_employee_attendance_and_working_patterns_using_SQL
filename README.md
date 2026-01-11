@@ -81,6 +81,7 @@ hours_worked
 *Provided insights useful for HR decision-making and workforce planning
 
 🧾 Project Files
+
 📁 Employee-Attendance-Productivity-SQL
 │
 ├── employee_attendance_analysis.sql
