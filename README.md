@@ -18,9 +18,9 @@ Database Schema (RDBMS):
 
 employees
 ---------
-employee_id (PK)
-employee_name
-department
+employee_id (PK),
+employee_name,
+department,
 joining_date
 
 
@@ -28,9 +28,9 @@ joining_date
    
 attendance
 ----------
-attendance_id (PK)
-employee_id (FK)
-attendance_date
+attendance_id (PK),
+employee_id (FK),
+attendance_date,
 status (Present / Absent)
 
 
@@ -38,9 +38,9 @@ status (Present / Absent)
 
 work_hours
 ----------
-record_id (PK)
-employee_id (FK)
-work_date
+record_id (PK),
+employee_id (FK),
+work_date,
 hours_worked
 
 
