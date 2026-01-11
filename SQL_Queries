@@ -1,5 +1,5 @@
 
-// Creating employ table
+--Creating employ table
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     employee_name VARCHAR(100),
@@ -8,7 +8,7 @@ CREATE TABLE employees (
 );
 
 
-// Employ Attendence Table
+--Employ Attendence Table
 CREATE TABLE attendance (
     attendance_id INT PRIMARY KEY,
     employee_id INT,
@@ -17,7 +17,7 @@ CREATE TABLE attendance (
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
 );
 
-//Working Hour table
+--Working Hour table
 CREATE TABLE work_hours (
     record_id INT PRIMARY KEY,
     employee_id INT,
@@ -27,7 +27,7 @@ CREATE TABLE work_hours (
 );
 
 
-//Sample Dataset
+--Sample Dataset
 INSERT INTO employees VALUES
 (1, 'Amit Sharma', 'IT', '2022-01-10'),
 (2, 'Neha Verma', 'HR', '2022-03-15'),
@@ -48,8 +48,8 @@ INSERT INTO work_hours VALUES
 (205, 3, '2024-01-02', 8);
 
 
-//DATA ANALYSIS QUERIES
-//Employee Attendance Summary (JOIN)
+--DATA ANALYSIS QUERIES
+--Employee Attendance Summary (JOIN)
 SELECT 
     e.employee_name,
     COUNT(a.attendance_id) AS total_days,
@@ -59,7 +59,7 @@ FROM employees e
 JOIN attendance a ON e.employee_id = a.employee_id
 GROUP BY e.employee_name;
 
-//Department-Wise Attendance
+--Department-Wise Attendance
 SELECT 
     e.department,
     COUNT(a.attendance_id) AS total_records,
@@ -69,7 +69,7 @@ JOIN attendance a ON e.employee_id = a.employee_id
 GROUP BY e.department;
 
 
-//Average Working Hours per Employee
+--Average Working Hours per Employee
 SELECT 
     e.employee_name,
     AVG(w.hours_worked) AS avg_hours
@@ -79,7 +79,7 @@ GROUP BY e.employee_name;
 
 
 
-//Monthly Attendance Trend (Time-Based)
+--Monthly Attendance Trend (Time-Based)
 SELECT 
     MONTH(attendance_date) AS month,
     COUNT(*) AS total_records,
@@ -88,7 +88,7 @@ FROM attendance
 GROUP BY MONTH(attendance_date)
 ORDER BY month;
 
-//Employees with Low Average Work Hours
+--Employees with Low Average Work Hours
 SELECT 
     e.employee_name,
     AVG(w.hours_worked) AS avg_hours
